@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/home2.css">
+</head>
+<body>
+
+      <%- include('partials/navbar.ejs') %>
+    
+      <section id="container" >
+        <div id="left" class="pd-20"></div>
+        <div id="middle" class="pd-20">
+          <% for(let product of productsList) {%>
+          <a href="/productDetail?productId=<%= product._id %>&id=<%= id %>">
+            <div id="product_card" >
+              <div id="img">
+                <% if(product.img.length>0){ %>
+                  <img src="data:image/<%=product.img[0].contentType%>;base64,
+                        <%=product.img[0].data.toString('base64')%>" class="img_preview"1>
+                <% } %>
+              </div>
+              <div id="details">
+                <div id="price">
+                  <div>
+                    <%= product.name %>
+                  </div>
+                  <div>
+                    Rs. <%= product.price %>
+                  </div>
+                  <div id="desc"> 
+                    <%= product.description %>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </a>
+          <% } %> 
+        </div>
+        <div id="right" class="pd-20"></div>
+      </section>
+
+
+      </span>
+
+
+
+
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/home2.js"></script>
+    <script src="js/jquery.js"></script>
+    
+</body>
+</html>

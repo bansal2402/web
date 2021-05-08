@@ -1,0 +1,17 @@
+
+        <div class="d-inline-block">
+          <form action="destroy">
+            <div style="position:relative;">
+                <button type="submit" class="close AClass round">
+                  <span>&times;</span>
+                </button>
+                <input type="hidden" value="<%= image._id %>" name="imageId">
+                <input type="hidden" value="<%= image.imgName %>" name="imageName">
+                
+                <img src="data:image/<%=image.img.contentType%>;base64,
+                  <%=image.img.data.toString('base64')%>" >
+            </div>
+        </form>
+        </div>
+                    
+   

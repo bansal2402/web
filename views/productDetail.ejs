@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/productDetail.css">
+    <title>Document</title>
+</head>
+<body>
+  <%- include('partials/navbar.ejs') %>
+
+
+        <section id="container" >
+            <div id="left" class="pd-20"></div>
+            <div id="middle" class="pd-20">
+
+                <div id="container2">
+                    <div id="img">
+                        <% if(productDetails.img.length>0){ %>
+                     <img src="data:image/<%=productDetails.img[0].contentType%>;base64,
+                                <%=productDetails.img[0].data.toString('base64')%>" class="img_preview">
+                        <% } %>
+                        
+                    </div>
+                    <button id="lbutton" ><h2><p>&#60;</p></h2></button>
+                    <button id="rbutton" ><h2><p>&gt;</p></h2></button>
+                    
+                    
+
+
+        </div>
+
+            </div>
+            <div id="right" class="pd-20"></div>
+          </section>
+
+        
+
+
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/productDetail.js"></script> -->
+    <script src="js/jquery.js"></script>
+
+    <script>
+        
+    </script>
+    
+   
+    
+</body>
+</html>

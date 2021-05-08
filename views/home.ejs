@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <title>shop|Login Page</title>
+</head>
+<body>
+    <div class='container center'>
+        <div class='mtb-200'>
+            <div>
+                <h2>
+                    <span class='white mlr-20'>Login</span>
+                    <span class='white mlr-20'>Sign Up</span>
+                </h2>
+            </div>
+                <input type="checkbox" id="checkbox">
+                <label for="checkbox" class="label"></label>
+            
+            <div class="flip-box mt-30">
+                <div class="flip-box-inner mt-30">
+                    <div class="flip-box-front">
+                        <div class="login">
+                            <h3>Login</h3>
+                            <form action="/login" method="GET" class="form">
+                                <input type="text" id="log_email" name="log_email" placeholder="Your Email" onfocus="this.placeholder=''" class="log_group">
+                                <input type="password" id="log_pass" name="log_pass" placeholder="Your Password" onfocus="this.placeholder=''" class="log_group">
+                                <button class="log_button">Log In</button>
+                            </form>
+                            <a href="" class="white">Forgot Password</a>
+                            
+                        </div>
+                    </div>
+                    <div class="flip-box-back">
+                        <div class="signUp">
+                            <form action="/signup" method="POST" class="sig_form">
+                                <h2 class="signUpHeading">SignUp</h2>
+                                <input type="text" name="sig_name" id="sig_name" placeholder="name" class="sig_group">
+                                <input type="text" name="sig_email" id="sig_email" placeholder="email" class="sig_group">
+                                <input type="password" name="sig_pass" id="sig_pass" placeholder="password" class="sig_group">
+                                <input type="password" name="conf_pass" id="conf_pass" placeholder="confirm password" class="sig_group">
+                                <input type="text" name="phoneNo" id="phoneNo" placeholder="Phone No." class="sig_group">
+                                <button class="log_button" id="sig_submit"> Submit</button>
+                            </form>
+                            <% if(!ispassmatch){ %>
+                                <h4 class="white">Password and confirm password does not match</h4>
+                            <% } %>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="js/home.js"></script>
+    <script>
+        var passMatch= <%= ispassmatch %>;
+        if(!passMatch)
+        {
+            document.getElementById("checkbox").checked = true;
+        }
+    </script>
+    
+</body>
+</html>
